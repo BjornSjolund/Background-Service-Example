@@ -142,12 +142,12 @@ public class VerificationReceiver extends BroadcastReceiver{
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		//This variable holds the kind of intent this is about.
-		int intentType = intent.getIntExtra("type", 0);
+		int intentType = intent.getIntExtra(Positioning.POSITIONING_ERROR_MESSAGE, 0);
 		String errorMessage = "";
 		//
 		//Check for errors
 		if(intent.hasExtra("hasError")){
-			errorMessage = intent.getStringExtra("errorMessage");
+			errorMessage = intent.getStringExtra(Positioning.POSITIONING_ERROR_MESSAGE);
 			Log.e("debug", "Walkbase Library error: " + errorMessage);
 		}else
 		{ // If there is no error
