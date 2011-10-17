@@ -1,7 +1,7 @@
 /**
  * This is a simple activity to start and stop the positioning service.
  * 
- * @author Bjšrn Sjšlund
+ * @author Bjšrn Sjšlund, Niclas Jern.
  */
 
 package com.walkbase.locationservice;
@@ -44,9 +44,9 @@ public class LocationActivity extends Activity {
 				stopService();
 			}
 		});
-
+        
 	}
-
+    
 	
 	private void stopService() {
 		Log.v(TAG, "Stopping service..."); 
@@ -59,10 +59,12 @@ public class LocationActivity extends Activity {
 		}
 	}
 	
+	/**
+	 * Cleanup when the activity is destroyed.
+	 */
 	@Override
 	public void onDestroy() {
 		stopService();
-		
 		super.onDestroy(); }
 }
 
